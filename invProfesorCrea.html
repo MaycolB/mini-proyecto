@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Profesor</title>
+    <link rel="STYLESHEET" type="text/css" href="css/estilos.css">
+    <script>
+<link rel="STYLESHEET" type="text/css" href="css/estilos.css">
+   function validarfor()
+   {
+        var nombres = document.getElementsByName("nombres")[0].value;
+        var mail = document.getElementsByName("mail")[0].value;
+        var celular= document.getElementsByName("celular")[0].value;
+        var coment = document.getElementsByName("comentarios")[0].value;
+        var expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+
+        if ((nombres == "") || (mail == ""))
+         {  //COMPRUEBA CAMPOS VACIOS
+            alert("Ingrese el nombre y el mail");
+            return false;
+         }
+         if ((celular == ""))
+         {  //COMPRUEBA CAMPOS VACIOS
+            alert("Ingrese el No de Célular ");
+            return false;
+         }
+        if ( !expr.test(correo) )
+        {   //COMPRUEBA MAIL
+        alert("Error: La dirección de correo " + correo + " es incorrecta.");
+        return false;
+        }
+
+    }
+     function mensaje() {
+        var nombres = document.getElementsByName("nombres")[0].value;
+        var mail = document.getElementsByName("mail")[0].value;
+        var celular= document.getElementsByName("celular")[0].value;
+        var coment = document.getElementsByName("comentarios")[0].value;
+        if ((nombres == "") || (mail == "") || (celular == "") || (coment == "")  )
+         {  //COMPRUEBA CAMPOS VACIOS
+            alert("Los campos no pueden quedar vacios");
+            return false;
+         }
+         else{
+            alert("!...Registro grabado con exito...!");
+         }
+
+
+
+
+        }
+ </script>
+
+</head>
+<body>
+<FORM id="formulario" action="" method="post" onsubmit="return validarfor();">
+
+    <h1>CREAR PROFESORES</h1>
+    <p>Destinatario:</p>
+    <SELECT NAME="lista">
+    <OPTION SELECTED>Sr
+    <OPTION>Sra.
+    </SELECT>
+    <br>
+
+    <label for="nombres"><p>*Apellido y nombre: </p></label><br>
+    <INPUT TYPE="text"  id="nombres" name="nombres">
+    <br>
+
+
+    <label for="mail"><p>*Email:</p></label>
+    <INPUT TYPE="email" id="mail" name="mail" >
+    <br>
+
+    <label for="celular"><p>*Celular:</p></label>
+    <INPUT TYPE="tel"  id="celular" name="celular" maxlength="10" width="10" height="10" >
+    <br>
+
+    <p>Via de contacto:</p>
+    <SELECT NAME="viadecontacto" >
+    <OPTION SELECTED>Email
+    <OPTION>Telefono
+    <OPTION>Celular
+    </SELECT>
+    <br>
+
+    <label for="comentarios"><p>*Comentarios:</p></label>
+    <textarea  id="comentarios"  rows="10" cols="40" maxlength="300" name="comentarios">Escribe aquí tus comentarios</textarea>
+    <br>
+
+    <input type="submit" name="commit" value="Grabar" onclick="mensaje();" >
+    <a href="menu.html">Cancerlar</a>
+</form>
+</body>
+</html>

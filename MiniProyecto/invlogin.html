@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="STYLESHEET" type="text/css" href="css/estilos.css">
+<script>
+
+   function validarfor(){
+        var usuario = document.getElementsByName("usuario")[0].value;
+        var clave = document.getElementsByName("clave")[0].value;
+if ((usuario == "") || (clave == ""))
+{  //COMPRUEBA CAMPOS VACIOS
+    alert("Los campos no pueden quedar vacios");
+    return false;
+}
+
+}
+ </script>
+</head>
+<body>
+<div id="contenedor">
+<div id="central">
+<div id="login">
+    <div class="titulo">
+                        Bienvenido
+    </div>
+<FORM id="loginform" ACTION="menu.html" METHOD="POST" onsubmit="return validarfor();">
+Usuario:
+    <INPUT TYPE="text" id="usuario" NAME="usuario"><BR>
+
+Clave: <INPUT TYPE="password" id="clave" NAME="clave" maxlength="5"><BR>
+<INPUT TYPE="submit" VALUE="Entrar">
+</FORM>
+</div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
